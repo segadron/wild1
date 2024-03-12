@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отображение данных заказа</title>
+</head>
+<body>
+    <h2>Введите orderUID</h2>
+    <input type="text" id="orderUIDInput" placeholder="Введите orderUID">
+    <button onclick="getOrderData()">Получить данные</button>
+    <div id="orderData"></div>
+
+    <script>       
+        // Функция для отправки запроса на сервер и получения данных заказа по его уникальному идентификатору
+        function getOrderData() {           
+            const orderUID = document.getElementById('orderUIDInput').value;
+            var url = "http://localhost:8080/order/" + orderUID;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
